@@ -1,0 +1,26 @@
+[
+    {
+        "level": "SEVERE",
+        "message": "http:\/\/web\/js\/app.js - Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "source": "network",
+        "timestamp": 1568760680410
+    },
+    {
+        "level": "SEVERE",
+        "message": "http:\/\/web\/css\/app.css - Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "source": "network",
+        "timestamp": 1568760680416
+    },
+    {
+        "level": "SEVERE",
+        "message": "http:\/\/web\/js\/app.js - Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "source": "network",
+        "timestamp": 1568760681424
+    },
+    {
+        "level": "SEVERE",
+        "message": "http:\/\/web\/css\/app.css - Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "source": "network",
+        "timestamp": 1568760681432
+    }
+]
