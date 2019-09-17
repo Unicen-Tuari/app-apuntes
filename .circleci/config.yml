@@ -56,6 +56,13 @@ jobs:
             - node_modules
             - ~/.yarn
 
+      # setup application
+      - run:
+          name: Setup Environment
+          command: |
+            cp .env.testing .env
+            php artisan key:generate                      
+
       # prepare the database
       - run: touch storage/testing.sqlite
       - run: php artisan migrate --env=testing --database=sqlite_testing --force
