@@ -1,6 +1,8 @@
 # PHP CircleCI 2.0 configuration file
 #
 # Check https://circleci.com/docs/2.0/language-php/ for more details
+# https://github.com/CircleCI-Public/circleci-demo-php-laravel/blob/circleci-2.0/.circleci/config.yml
+# https://laravel.com/docs/5.8/dusk
 #
 version: 2
 jobs:
