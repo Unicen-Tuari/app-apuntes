@@ -8,6 +8,8 @@ jobs:
     docker:
       # Specify the version you desire here
       - image: circleci/php:7.3-stretch-node-browsers
+        environment:
+          APP_ENV: testing
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -57,11 +59,11 @@ jobs:
             - ~/.yarn
 
       # setup application
-      - run:
+      - run: 
           name: Setup Environment
           command: |
             cp .env.testing .env
-            php artisan key:generate                      
+            php artisan key:generate                     
 
       # prepare the database
       - run: touch storage/testing.sqlite
@@ -93,3 +95,26 @@ jobs:
           path: tests/_output
       - store_artifacts:
           path: tests/_output
+  test:
+    docker:
+      # Specify the version you desire here
+      - image: circleci/php:7.3-stretch-node-browsers
+    steps:
+      - run: echo 'Job de test'
+
+  other_job:
+    docker:
+      # Specify the version you desire here
+      - image: circleci/php:7.3-stretch-node-browsers
+    steps:
+      - run: echo 'Otro Job'
+      
+workflows:
+  version: 2
+  build-and-test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+      - other_job
