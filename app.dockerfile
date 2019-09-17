@@ -18,3 +18,11 @@ RUN apt-get update \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && docker-php-ext-install zip 
+
+## Install Nodejs
+RUN curl -sL https://deb.nodesource.com/setup_10.x | bash \
+      && apt-get install -y nodejs
+
+
+RUN usermod -u 1000 www-data
+RUN groupmod -g 1000 www-data
