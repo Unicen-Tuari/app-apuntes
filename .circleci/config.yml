@@ -36,6 +36,8 @@ jobs:
 
       - run: composer install -n --prefer-dist
 
+      - run: php artisan dusk:chrome-driver
+
       - save_cache:
           key: composer-v1-{{ checksum "composer.lock" }}
           paths:
